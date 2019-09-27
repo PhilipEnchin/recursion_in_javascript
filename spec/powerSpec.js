@@ -5,5 +5,6 @@ describe('power', function() {
     expect(power(2, 4)).to.equal(16);
     expect(power(5, 3)).to.equal(125);
     expect(power(10, 3)).to.equal(1000);
+    expect(power(2, -3)).to.equal(1 / 8);
   });
 });

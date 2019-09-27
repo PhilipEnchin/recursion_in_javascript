@@ -1,5 +1,5 @@
-// Given two integers -- a base and an exponent -- write a 
-// recursive function that computes the exponent math and 
+// Given two integers -- a base and an exponent -- write a
+// recursive function that computes the exponent math and
 // returns the result.
 
 // Exponent math is performed by multiplying the base by itself
@@ -13,5 +13,12 @@
 // power(10, 3) => 1000
 
 var power = function(base, exponent) {
-  // Your code here
+  if (exponent === 0) {return 1;}
+  else if (exponent < 0) {return 1 / power(base, -exponent);}
+  else if (exponent % 2 === 0) {
+    const sqrt = power(base, exponent / 2);
+    return sqrt * sqrt;
+  } else {
+    return base * power(base, exponent - 1);
+  }
 };
