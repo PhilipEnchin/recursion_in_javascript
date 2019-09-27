@@ -16,7 +16,10 @@
 // nthFibonacci(4); // => 3
 // etc...
 
+fibNumbers = [null, 1, 1];
+
 var nthFibonacci = function(n) {
-  // Your code here
+  if (n in fibNumbers) {return fibNumbers[n];}
+  return nthFibonacci(n - 1) + nthFibonacci(n - 2);
 };
 
